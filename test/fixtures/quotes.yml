@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value_to_be_insured: 1.5
+  annual_premium: 1.5
+  monthly_premium: 1.5
+
+two:
+  value_to_be_insured: 1.5
+  annual_premium: 1.5
+  monthly_premium: 1.5
