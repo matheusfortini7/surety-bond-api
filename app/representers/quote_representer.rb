@@ -7,7 +7,7 @@ class QuoteRepresenter
     {
       value_to_be_insured: @quote.value_to_be_insured,
       annual_premium: @quote.annual_premium,
-      monthly_premium: @quote.monthly_premium
+      monthly_premium: @quote.monthly_premium,
     }
   end
 
