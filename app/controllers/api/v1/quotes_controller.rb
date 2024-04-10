@@ -9,8 +9,6 @@ module Api
 
       def create
         quote = Quote.new(quote_params)
-        quote.annual_premium = quote.value_to_be_insured * Plan.find_by(name: "Aluguel padrão").rate * MONTHS_IN_A_YEAR
-        quote.monthly_premium = quote.annual_premium / MONTHS_IN_A_YEAR
 
         if quote.save
           render json: QuoteRepresenter.new(quote).as_json, status: :created
