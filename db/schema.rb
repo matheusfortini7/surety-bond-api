@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_07_153019) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_12_231704) do
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.float "rate"
@@ -23,6 +23,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_153019) do
     t.float "value_to_be_insured"
     t.float "annual_premium"
     t.float "monthly_premium"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

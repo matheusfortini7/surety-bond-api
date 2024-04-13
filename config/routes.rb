@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :quotes, only: [:index, :create]
 
-      post 'authentication', to: 'authentication#create'
+      post 'authenticate', to: 'authentication#create'
     end
   end
 end
