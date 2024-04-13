@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_12_231704) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_13_002120) do
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.float "rate"
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_12_231704) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
