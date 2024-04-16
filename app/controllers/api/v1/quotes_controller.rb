@@ -1,6 +1,10 @@
 module Api
   module V1
     class QuotesController < ApplicationController
+      include ActionController::HttpAuthentication::Token
+
+      before_action :authenticate_user, only: [:create]
+
       MONTHS_IN_A_YEAR = 12
 
       def index
@@ -21,6 +25,14 @@ module Api
 
       def quote_params
         params.require(:quote).permit(:value_to_be_insured)
+      end
+
+      def authenticate_user
+        token, _options = token_and_options(request)
+        user_id = AuthenticationTokenService.decode(token)
+        User.find(user_id)
+        rescue ActiveRecord::RecordNotFound, JWT::DecodeError
+          render status: :unauthorized
       end
     end
   end
